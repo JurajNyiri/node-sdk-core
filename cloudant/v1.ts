@@ -11040,6 +11040,9 @@ namespace CloudantV1 {
     /** Number of total rows. */
     totalRows: number;
 
+    /** Number of offset results. */
+    offset: number;
+
     /** List of doc results. */
     rows: DocsResultRow[];
 
@@ -11070,6 +11073,9 @@ namespace CloudantV1 {
       let copy: AllDocsResult = <AllDocsResult>{};
       if (obj.total_rows !== undefined) {
         copy.totalRows = obj.total_rows;
+      }
+      if (obj.offset !== undefined) {
+        copy.offset = obj.offset;
       }
       if (obj.rows !== undefined) {
         copy.rows = BaseService.convertModel(obj.rows, DocsResultRow.deserialize);
